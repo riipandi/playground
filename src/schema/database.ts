@@ -25,4 +25,7 @@ export const db = new Kysely<Database>({
 export const migrator = new Migrator({
     db,
     provider: new FileMigrationProvider({ fs, path, migrationFolder }),
+    migrationTableName: '_migration',
+    migrationLockTableName: '_migration_lock',
+    migrationTableSchema: 'public',
 })

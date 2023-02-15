@@ -1,7 +1,8 @@
 import { db, migrator } from './database'
 
-async function migrateToLatest() {
-    const { error, results } = await migrator.migrateToLatest()
+async function runMigration(action: 'migrate' | 'rollback') {
+    const { error, results } =
+        action == 'rollback' ? await migrator.migrateDown() : await migrator.migrateToLatest()
 
     results?.forEach((it) => {
         if (it.status === 'Success') {
@@ -20,4 +21,19 @@ async function migrateToLatest() {
     await db.destroy()
 }
 
-migrateToLatest()
+switch (process.argv[2]) {
+    case 'migrate':
+        console.info('Running database migration...')
+        runMigration('migrate')
+        break
+    case 'rollback':
+        console.info('Rolling back migration...')
+        runMigration('rollback')
+        break
+    case 'seed':
+        console.info('Not yet implemented...')
+        break
+    default:
+        console.warn('Invalid argument provided!')
+        break
+}

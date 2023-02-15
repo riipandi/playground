@@ -1,7 +1,9 @@
 {
     "name": "kysely-playground",
     "scripts": {
-        "db:migrate": "ts-node src/schema/command.ts"
+        "db:migrate": "ts-node src/schema/command.ts migrate",
+        "db:rollback": "ts-node src/schema/command.ts rollback",
+        "db:seed": "ts-node src/schema/command.ts seed"
     },
     "dependencies": {
         "dotenv": "^16.0.3",

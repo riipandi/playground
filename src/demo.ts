@@ -17,7 +17,7 @@ async function demo() {
         .executeTakeFirst()
 
     if (person) {
-        person.pet_name
+        console.info('RESULT', person.pet_name)
     }
 }
 
