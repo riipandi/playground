@@ -5,21 +5,37 @@ import { Pool } from 'pg'
 import path, { join } from 'path'
 
 import { PetTable, PersonTable } from './tables'
+import { NeonDialect } from 'kysely-neon'
 
-interface Database {
+export interface Database {
     person: PersonTable
     pet: PetTable
 }
 
-// Database migrations folder
+enum DatabaseDialect {
+    Postgres = 'postgres',
+    Neon = 'neon',
+}
+
+// Database migrations folder and selected dialect
 const migrationFolder = join(__dirname, 'migrations')
+const selectedDialect = process.env.DATABASE_DIALECT as DatabaseDialect
+
+const dbDialect = (dialect: DatabaseDialect) => {
+    return dialect === DatabaseDialect.Neon
+        ? new NeonDialect({
+              connectionString: process.env.DATABASE_URL!!,
+          })
+        : new PostgresDialect({
+              pool: new Pool({
+                  connectionString: process.env.DATABASE_URL!!,
+              }),
+          })
+}
 
 // You'd create one of these when you start your app.
 export const db = new Kysely<Database>({
-    // Use MysqlDialect for MySQL and SqliteDialect for SQLite.
-    dialect: new PostgresDialect({
-        pool: new Pool({ connectionString: process.env.DATABASE_URL }),
-    }),
+    dialect: dbDialect(selectedDialect),
 })
 
 export const migrator = new Migrator({
