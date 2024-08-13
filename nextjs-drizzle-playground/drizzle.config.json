@@ -1,0 +1,5 @@
+{
+    "dialect": "pg",
+    "out": "./database/migration",
+    "schema": "./database/schemas"
+}

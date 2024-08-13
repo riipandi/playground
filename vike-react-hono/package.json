@@ -1,0 +1,49 @@
+{
+  "name": "my-app",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "cross-env NODE_ENV=production tsx ./hono-entry.node.ts",
+    "lint": "biome lint --write .",
+    "format": "biome format --write .",
+    "drizzle:generate": "drizzle-kit generate",
+    "drizzle:migrate": "drizzle-kit migrate",
+    "drizzle:studio": "drizzle-kit studio",
+    "drizzle:seed": "tsx ./database/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "@biomejs/biome": "1.8.3",
+    "@types/better-sqlite3": "^7.6.11",
+    "@hono/vite-dev-server": "^0.13.1",
+    "@types/node": "^18.19.14",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "tailwindcss": "^3.4.7",
+    "postcss": "^8.4.41",
+    "autoprefixer": "^10.4.20"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.1.2",
+    "drizzle-kit": "^0.23.2",
+    "drizzle-orm": "^0.32.2",
+    "@hono/node-server": "^1.12.0",
+    "@universal-middleware/hono": "^0.1.1",
+    "cross-env": "^7.0.3",
+    "hono": "^4.5.3",
+    "tsx": "^4.16.5",
+    "vite": "^5.3.5",
+    "vike": "^0.4.182",
+    "@vitejs/plugin-react": "^4.3.1",
+    "cross-fetch": "^4.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vike-react": "^0.5.0"
+  },
+  "packageManager": "pnpm@9.6.0"
+}

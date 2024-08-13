@@ -1,0 +1,92 @@
+{
+    "name": "vike-fullstack-react",
+    "version": "0.0.1",
+    "description": "Vike fullstack app with React, Drizzle, LibSQL, and Tailwind CSS",
+    "author": "Aris Ripandi <aris@duck.com>",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "wireit",
+        "preview": "wireit",
+        "check": "biome check --write .",
+        "format": "biome format . --write",
+        "lint": "biome lint --write .",
+        "docker:build": "docker build -f Dockerfile . -t $npm_package_name:latest -t $npm_package_name:$npm_package_version",
+        "docker:run": "docker run --rm -it -p 3000:3000 --env-file .env.docker --name $npm_package_name $npm_package_name:latest",
+        "docker:shell": "docker run --rm -it -p 3000:3000 --env-file .env.docker --entrypoint /bin/sh $npm_package_name:$npm_package_version",
+        "update-deps": "npm-check-updates --configFileName .ncurc.json",
+        "purge": "docker compose down --remove-orphans --volumes",
+        "cleanup": "docker compose down --remove-orphans",
+        "pre-dev": "docker compose up -d",
+        "db:generate": "drizzle-kit generate",
+        "db:migrate": "drizzle-kit migrate",
+        "db:push": " drizzle-kit push",
+        "db:studio": "drizzle-kit studio",
+        "db:seed": "tsx ./database/seed.ts"
+    },
+    "dependencies": {
+        "@hono/node-server": "^1.12.0",
+        "@libsql/client": "^0.8.1",
+        "@nanostores/persistent": "^0.10.2",
+        "@nanostores/react": "^0.7.3",
+        "@trpc/client": "^10.45.2",
+        "@trpc/server": "^10.45.2",
+        "@universal-middleware/hono": "^0.1.1",
+        "@vitejs/plugin-react": "^4.3.1",
+        "clsx": "^2.1.1",
+        "cross-env": "^7.0.3",
+        "cross-fetch": "^4.0.0",
+        "drizzle-kit": "^0.23.2",
+        "drizzle-orm": "^0.32.2",
+        "hono": "^4.5.4",
+        "nanostores": "^0.11.2",
+        "react-dom": "^18.3.1",
+        "react": "^18.3.1",
+        "tailwind-merge": "^2.4.0",
+        "tsx": "^4.16.5",
+        "vike": "^0.4.182",
+        "vike-react": "^0.5.1"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "1.8.3",
+        "@hono/vite-dev-server": "^0.13.1",
+        "@types/node": "^22.1.0",
+        "@types/react-dom": "^18.3.0",
+        "@types/react": "^18.3.3",
+        "autoprefixer": "^10.4.20",
+        "npm-check-updates": "^17.0.3",
+        "postcss": "^8.4.41",
+        "rimraf": "^6.0.1",
+        "tailwindcss": "^3.4.7",
+        "typescript": "^5.5.4",
+        "vite-plugin-inspect": "^0.8.5",
+        "vite": "^5.3.5",
+        "wireit": "^0.14.7"
+    },
+    "wireit": {
+        "build": {
+            "command": "vite build",
+            "clean": "if-file-deleted",
+            "env": {
+                "NODE_OPTIONS": "--max-old-space-size=3072",
+                "NODE_ENV": {
+                    "external": true,
+                    "default": "production"
+                }
+            }
+        },
+        "preview": {
+            "command": "cross-env tsx ./hono-entry.node.ts",
+            "clean": false,
+            "env": {
+                "NODE_OPTIONS": "--max-old-space-size=3072",
+                "NODE_ENV": {
+                    "external": true,
+                    "default": "production"
+                }
+            }
+        }
+    },
+    "packageManager": "pnpm@9.6.0"
+}

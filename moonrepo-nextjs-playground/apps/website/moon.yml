@@ -1,0 +1,9 @@
+tasks:
+    build:
+        command: 'next build'
+    dev:
+        command: 'next dev'
+    start:
+        command: 'next start'
+    lint:
+        command: 'next lint'
