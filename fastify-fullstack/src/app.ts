@@ -1,7 +1,6 @@
 import { join } from "node:path";
-import AutoLoad, { AutoloadPluginOptions } from "@fastify/autoload";
-import fastifyRequestLogger from "@mgcrea/fastify-request-logger";
-import Fastify, { FastifyInstance } from "fastify";
+import AutoLoad, { type AutoloadPluginOptions } from "@fastify/autoload";
+import Fastify, { type FastifyInstance } from "fastify";
 
 // import fastifyFastrue from "@fastrue/fastify";
 import { env } from "./env";
@@ -17,17 +16,14 @@ const server: FastifyInstance = Fastify({
   logger: {
     level: "debug",
     transport: {
-      target: "@mgcrea/pino-pretty-compact",
-      options: {
-        translateTime: "HH:MM:ss Z",
-        ignore: "pid,hostname",
-      },
+      target: "@fastify/one-line-logger",
+      // options: {
+      //   translateTime: "HH:MM:ss Z",
+      //   ignore: "pid,hostname",
+      // },
     },
   },
 });
-
-// Register fastify plugins
-server.register(fastifyRequestLogger);
 
 // Register fastrue plugins
 // server.register(fastifyFastrue, {

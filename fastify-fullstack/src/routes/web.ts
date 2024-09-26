@@ -1,4 +1,4 @@
-import { FastifyPluginAsync } from "fastify";
+import type { FastifyPluginAsync } from "fastify";
 
 const routes: FastifyPluginAsync = async (fastify, _opts): Promise<void> => {
   fastify.get("/", async (_request, reply) => {
