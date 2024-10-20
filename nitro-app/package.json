@@ -1,0 +1,23 @@
+{
+    "name": "nitro-app",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "nitro build",
+        "dev": "nitro dev",
+        "prepare": "nitro prepare",
+        "preview": "node .output/server/index.mjs",
+        "check": "biome check . --write",
+        "format": "biome format . --write",
+        "lint": "biome lint . --write"
+    },
+    "dependencies": {
+        "std-env": "^3.7.0"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^1.9.4",
+        "nitropack": "latest"
+    },
+    "packageManager": "pnpm@9.12.2"
+}
