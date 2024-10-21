@@ -1,0 +1,11 @@
+{
+    // https://nitro.unjs.io/guide/typescript
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "extends": "./.nitro/types/tsconfig.json",
+    "compilerOptions": {
+        "skipLibCheck": true, // Skip type checking of all declaration files
+        "tsBuildInfoFile": "./node_modules/.tsbuildinfo_nitro"
+    },
+    "exclude": ["vite.config.ts", "client"],
+    "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
+}

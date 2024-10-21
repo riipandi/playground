@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "allowJs": false,
+        "baseUrl": ".",
+        "composite": true,
+        "disableSizeLimit": false,
+        "esModuleInterop": true,
+        "incremental": true,
+        "jsx": "react-jsx",
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "module": "ESNext",
+        "moduleDetection": "auto",
+        "moduleResolution": "Bundler",
+        "noImplicitAny": true,
+        "noUncheckedIndexedAccess": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "target": "ESNext",
+        "tsBuildInfoFile": "./node_modules/.tsbuildinfo_app",
+        "useDefineForClassFields": true,
+        "verbatimModuleSyntax": true,
+        "paths": {
+            "#/client/*": ["client"]
+        }
+    },
+    "include": ["./client/*"]
+}

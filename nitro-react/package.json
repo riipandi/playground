@@ -1,0 +1,42 @@
+{
+    "name": "nitro-app",
+    "version": "0.0.0",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "dev": "nitro dev",
+        "build": "pnpm --silent run build:vite && pnpm --silent run build:nitro",
+        "build:nitro": "nitro build",
+        "build:vite": "vite build",
+        "start": "node .output/server/index.mjs",
+        "check": "biome check . --write",
+        "format": "biome format . --write",
+        "lint": "biome lint . --write",
+        "prepare": "nitro prepare",
+        "postinstall": "lefthook install || true",
+        "pre-commit": "lefthook run pre-commit --force",
+        "cleanup": "pnpm run --stream --color \"/cleanup:/\"",
+        "cleanup:dev": "pnpm dlx rimraf .{output,client,data,nitro,wrangler}",
+        "cleanup:test": "pnpm dlx rimraf tests-results playwright-report",
+        "cleanup:deps": "pnpm dlx rimraf pnpm-lock.yaml node_modules",
+        "typecheck": "tsc -b"
+    },
+    "dependencies": {
+        "react-dom": "^18.3.1",
+        "react": "^18.3.1",
+        "redactyl.js": "^1.6.0",
+        "std-env": "^3.7.0"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^1.9.4",
+        "@types/react-dom": "^18.3.1",
+        "@vitejs/plugin-react": "^4.3.3",
+        "git-cliff": "^2.6.1",
+        "lefthook": "^1.7.22",
+        "nitropack": "^2.9.7",
+        "npm-check-updates": "^17.1.4",
+        "typescript": "^5.6.3",
+        "vite": "^5.4.9"
+    },
+    "packageManager": "pnpm@9.12.2"
+}
