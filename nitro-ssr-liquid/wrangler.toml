@@ -83,6 +83,7 @@ mode = "smart"
 
 [env.preview.vars]
 NODE_VERSION = "20.18.0"
+SITE_BASE_URL="${CF_PAGES_URL}"
 
 # [[env.preview.kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
@@ -92,6 +93,7 @@ NODE_VERSION = "20.18.0"
 
 [env.production.vars]
 NODE_VERSION = "20.18.0"
+SITE_BASE_URL="${CF_PAGES_URL}"
 
 # [[env.production.kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
