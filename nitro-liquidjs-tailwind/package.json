@@ -4,7 +4,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "start": "node .output/server/index.mjs",
+        "start": "wrangler dev --port 3000",
         "build": "pnpm run --stream --color \"/build:(css|nitro)/\"",
         "dev": "pnpm run --reporter-hide-prefix --color --parallel \"/watch:(css|nitro)/\"",
         "build:css": "tailwindcss -i ./server/assets/styles/styles.css -o ./public/css/styles.css --minify",
@@ -14,7 +14,10 @@
         "prepare": "nitro prepare",
         "check": "biome check . --write",
         "format": "biome format . --write",
-        "lint": "biome lint . --write"
+        "lint": "biome lint . --write",
+        "cleanup": "pnpm run --stream --color \"/cleanup:/\"",
+        "cleanup:dev": "pnpm dlx rimraf .{output,data,nitro,wrangler} _{build,data,dist}",
+        "cleanup:deps": "pnpm dlx rimraf pnpm-lock.yaml node_modules tests-results"
     },
     "dependencies": {
         "liquidjs": "^10.18.0",
@@ -26,7 +29,8 @@
         "nitropack": "latest",
         "postcss": "^8.4.47",
         "rollup-plugin-postcss": "^4.0.2",
-        "tailwindcss": "^3.4.14"
+        "tailwindcss": "^3.4.14",
+        "wrangler": "^3.83.0"
     },
     "packageManager": "pnpm@9.12.2"
 }

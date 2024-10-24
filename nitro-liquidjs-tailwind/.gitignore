@@ -1,9 +1,50 @@
-node_modules
-dist
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# IDE & Editors
+/.fleet
+/.idea
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+
+# OS Generated
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Build & Cache
+/.cache
+*tsbuildinfo
+*.bak
+/coverage
+
+# Database
+*.sqlite*
+*.sqlite3*
+*.libsql
+*.db
+
+# Nitro Output
+_data/
 .data
+.dist
 .nitro
-.cache
 .output
-.env*
+.client
+.build
+.wrangler
+build/
+dist/
+
+# Environment Variables
+.env.*
 !.env.example
-public/css/*
+compose.env*
+!compose.env.example
