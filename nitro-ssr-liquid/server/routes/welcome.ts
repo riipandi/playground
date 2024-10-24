@@ -1,5 +1,7 @@
+import type { AppConfig } from '~/types/config'
+
 export default defineRenderHandler((event) => {
-  const appConfig = useAppConfig(event) as { baseURL: string; title: string }
+  const appConfig = useAppConfig(event) as AppConfig
 
   const htmlBody = renderCachedTemplate(event.context.templateKey, {
     pageTitle: `Welcome to ${appConfig.title}!`,

@@ -1,5 +1,7 @@
+import type { AppConfig } from '~/types/config'
+
 export default defineNitroErrorHandler((error, event) => {
-  const appConfig = useAppConfig(event) as { baseURL: string; title: string }
+  const appConfig = useAppConfig(event) as AppConfig
 
   const formatErrorStack = (stack?: string) => {
     if (!stack) return ''

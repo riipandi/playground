@@ -1,6 +1,8 @@
+import type { AppConfig } from '~/types/config'
+
 export default defineCachedEventHandler(
   async (event) => {
-    const appConfig = useAppConfig(event) as { baseURL: string; title: string }
+    const appConfig = useAppConfig(event) as AppConfig
 
     setResponseHeader(event, 'Content-Type', 'text/plain')
 

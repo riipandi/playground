@@ -1,5 +1,6 @@
 import { resolve } from 'pathe'
 import { env, isDevelopment, isProduction, provider } from 'std-env'
+import type { AppConfig } from '~/types/config'
 
 /* https://nitro.unjs.io/config */
 export default defineNitroConfig({
@@ -8,8 +9,8 @@ export default defineNitroConfig({
       provider === 'cloudflare_pages'
         ? env.CF_PAGES_URL
         : env.SITE_BASE_URL || 'http://localhost:3000',
-    title: 'My Beautiful Website',
-  },
+    title: 'Beautiful Website',
+  } as AppConfig,
   srcDir: 'server',
   preset: 'cloudflare-pages',
   output: { dir: resolve('.output') },
