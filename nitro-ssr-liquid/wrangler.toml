@@ -16,6 +16,11 @@ pages_build_output_dir = ".output"
 # [site] # <-- preset: `cloudflare-module`
 # bucket = ".output/public"
 
+[build]
+watch_dir = "nitro-ssr-liquid/*"
+command = "pnpm run build"
+cwd = "nitro-ssr-liquid"
+
 # Automatically place your workloads in an optimal location to minimize latency.
 # If you are running back-end logic in a Pages Function, running it closer to your back-end infrastructure
 # rather than the end user may result in better performance.
@@ -83,7 +88,7 @@ mode = "smart"
 
 [env.preview.vars]
 NODE_VERSION = "20.18.0"
-# SITE_BASE_URL = "${CF_PAGES_URL}"
+SITE_BASE_URL = "CF_PAGES_URL"
 
 # [[env.preview.kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
@@ -93,7 +98,7 @@ NODE_VERSION = "20.18.0"
 
 [env.production.vars]
 NODE_VERSION = "20.18.0"
-# SITE_BASE_URL = "${CF_PAGES_URL}"
+SITE_BASE_URL = "CF_PAGES_URL"
 
 # [[env.production.kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
