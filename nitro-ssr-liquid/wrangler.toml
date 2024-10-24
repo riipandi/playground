@@ -81,8 +81,8 @@ mode = "smart"
 
 ######## PREVIEW environment config ########
 
-# [env.preview.vars]
-# API_KEY = "xyz789"
+[env.preview.vars]
+NODE_VERSION = "20.18.0"
 
 # [[env.preview.kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
@@ -90,8 +90,8 @@ mode = "smart"
 
 ######## PRODUCTION environment config ########
 
-# [env.production.vars]
-# API_KEY = "abc123"
+[env.production.vars]
+NODE_VERSION = "20.18.0"
 
 # [[env.production.kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
