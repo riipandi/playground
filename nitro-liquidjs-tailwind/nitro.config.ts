@@ -13,11 +13,13 @@ export default defineNitroConfig({
   sourceMap: isDevelopment,
   serveStatic: 'node',
   errorHandler: '~/error',
+  publicAssets: [{ dir: '../public' }],
   serverAssets: [{ baseName: 'views', dir: resolve('server/views') }],
   prerender: {
     autoSubfolderIndex: true,
     crawlLinks: true,
     failOnError: true,
-    routes: ['/', '/about'],
+    ignore: ['/404'],
+    routes: ['/', '/welcome'],
   },
 })

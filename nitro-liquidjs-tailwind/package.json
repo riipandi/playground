@@ -4,10 +4,14 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "nitro build",
-        "dev": "nitro dev",
-        "prepare": "nitro prepare",
         "start": "node .output/server/index.mjs",
+        "build": "pnpm run --stream --color \"/build:(css|nitro)/\"",
+        "dev": "pnpm run --reporter-hide-prefix --color --parallel \"/watch:(css|nitro)/\"",
+        "build:css": "tailwindcss -i ./server/assets/styles/styles.css -o ./public/css/styles.css --minify",
+        "watch:css": "tailwindcss -i ./server/assets/styles/styles.css -o ./public/css/styles.css --watch",
+        "watch:nitro": "nitro dev",
+        "build:nitro": "nitro build",
+        "prepare": "nitro prepare",
         "check": "biome check . --write",
         "format": "biome format . --write",
         "lint": "biome lint . --write"

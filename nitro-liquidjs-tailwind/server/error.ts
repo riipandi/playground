@@ -7,7 +7,7 @@ export default defineNitroErrorHandler((error, event) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${error.statusCode} - ${appConfig.title}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body class="bg-gradient-to-br from-white to-gray-100 min-h-screen flex items-center justify-center p-4">
     <main class="max-w-4xl w-full mx-auto bg-white rounded-xl shadow-sm p-8 border border-gray-100">

@@ -1,4 +1,3 @@
-import { isProduction } from 'std-env'
 import { parsePath } from 'ufo'
 
 export default defineNitroPlugin(async (nitroApp) => {
@@ -17,9 +16,9 @@ export default defineNitroPlugin(async (nitroApp) => {
     event.context.slug = routePath
     event.context.templateKey = templateKey
 
-    if (!isProduction) {
-      console.debug('[DEBUG:liquidjsPlugin]', { pathname, routeSlug, routePath, templateKey })
-    }
+    // if (!isProduction) {
+    //   console.debug('[DEBUG:liquidjsPlugin]', { pathname, routeSlug, routePath, templateKey })
+    // }
   })
 })
 
