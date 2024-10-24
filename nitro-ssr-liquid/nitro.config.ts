@@ -8,7 +8,7 @@ export default defineNitroConfig({
     title: 'My Beautiful Website',
   },
   srcDir: 'server',
-  preset: 'cloudflare-module',
+  preset: 'cloudflare-pages',
   output: { dir: resolve('.output') },
   minify: isProduction,
   sourceMap: isDevelopment,

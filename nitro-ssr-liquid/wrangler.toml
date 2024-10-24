@@ -6,15 +6,15 @@ compatibility_date = "2024-09-02"
 compatibility_flags = ["nodejs_compat"]
 
 # Preet: `cloudflare-pages` -- start with: `wrangler pages dev`
-# pages_build_output_dir = ".output"
+pages_build_output_dir = ".output"
 
-# Preset: `cloudflare-module` -- start with: `wranglerdev`
-rules = [{ type = "ESModule", globs = ["**/*.js", "**/*.mjs"]}]
-main = "./.output/server/index.mjs"
-workers_dev = true
+# # Preset: `cloudflare-module` -- start with: `wrangler dev`
+# rules = [{ type = "ESModule", globs = ["**/*.js", "**/*.mjs"]}]
+# main = "./.output/server/index.mjs"
+# workers_dev = true
 
-[site] # <-- preset: `cloudflare-module`
-bucket = ".output/public"
+# [site] # <-- preset: `cloudflare-module`
+# bucket = ".output/public"
 
 # Automatically place your workloads in an optimal location to minimize latency.
 # If you are running back-end logic in a Pages Function, running it closer to your back-end infrastructure

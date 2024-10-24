@@ -4,7 +4,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "start": "wrangler dev --port 3000",
+        "start": "wrangler pages dev --port 3000",
         "build": "pnpm run --stream --color \"/build:(css|nitro)/\"",
         "dev": "pnpm run --reporter-hide-prefix --color --parallel \"/watch:(css|nitro)/\"",
         "build:css": "tailwindcss -i ./server/assets/styles/styles.css -o ./public/css/styles.css --minify",
