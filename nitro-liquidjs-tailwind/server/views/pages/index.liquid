@@ -1,0 +1,13 @@
+{% layout 'layouts/site-layout' %}
+
+<h1>{{ pageTitle }}</h1>
+<p>{{ tagline }}</p>
+<ul>
+{% for mascot in mascots %}
+  <li>{{ mascot.name }}</li>
+{% endfor %}
+</ul>
+
+{% block 'footer' %}
+  Copyright &copy; 2024, Aris Ripandi
+{% endblock %}

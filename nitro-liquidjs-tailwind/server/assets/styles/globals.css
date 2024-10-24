@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html,
+    body {
+        @apply antialiased scroll-smooth;
+    }
+}
+
+@layer utilities {
+    .debug {
+        border-width: 1px;
+        border-style: dashed;
+        border-color: #f87171;
+    }
+}
