@@ -17,7 +17,8 @@
         "lint": "biome lint . --write",
         "cleanup": "pnpm run --stream --color \"/cleanup:/\"",
         "cleanup:dev": "pnpm dlx rimraf .{output,data,nitro,wrangler} _{build,data,dist}",
-        "cleanup:deps": "pnpm dlx rimraf pnpm-lock.yaml node_modules tests-results"
+        "cleanup:deps": "pnpm dlx rimraf pnpm-lock.yaml node_modules tests-results",
+        "wrangler": "wrangler"
     },
     "dependencies": {
         "liquidjs": "^10.18.0",
