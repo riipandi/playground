@@ -79,11 +79,15 @@ mode = "smart"
 # When using environment-specific overrides for bindings, ALL bindings must be specified on a per-environment basis.
 # Docs: https://developers.cloudflare.com/pages/functions/wrangler-configuration#environment-specific-overrides
 
+######## SHARED environment config ########
+[vars]
+NODE_VERSION = "20.18.0"
+SITE_BASE_URL = ""
+
 ######## PREVIEW environment config ########
 
-[env.preview.vars]
-NODE_VERSION = "20.18.0"
-SITE_BASE_URL = "CF_PAGES_URL"
+# [env.preview.vars]
+# SECRET_KEY = "xxxxxxxxx"
 
 # [[env.preview.kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
@@ -91,9 +95,8 @@ SITE_BASE_URL = "CF_PAGES_URL"
 
 ######## PRODUCTION environment config ########
 
-[env.production.vars]
-NODE_VERSION = "20.18.0"
-SITE_BASE_URL = "CF_PAGES_URL"
+# [env.production.vars]
+# SECRET_KEY = "xxxxxxxxx"
 
 # [[env.production.kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
