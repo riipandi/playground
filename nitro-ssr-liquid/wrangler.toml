@@ -82,11 +82,11 @@ mode = "smart"
 ######## SHARED environment config ########
 [vars]
 NODE_VERSION = "20.18.0"
-SITE_BASE_URL = ""
 
 ######## PREVIEW environment config ########
 
 # [env.preview.vars]
+# SITE_BASE_URL = "$CF_PAGES_URL"
 # SECRET_KEY = "xxxxxxxxx"
 
 # [[env.preview.kv_namespaces]]
@@ -96,6 +96,7 @@ SITE_BASE_URL = ""
 ######## PRODUCTION environment config ########
 
 # [env.production.vars]
+# SITE_BASE_URL = "$CF_PAGES_URL"
 # SECRET_KEY = "xxxxxxxxx"
 
 # [[env.production.kv_namespaces]]

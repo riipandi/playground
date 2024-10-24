@@ -1,10 +1,13 @@
 import { resolve } from 'pathe'
-import { env, isDevelopment, isProduction } from 'std-env'
+import { env, isDevelopment, isProduction, provider } from 'std-env'
 
 /* https://nitro.unjs.io/config */
 export default defineNitroConfig({
   appConfig: {
-    baseURL: env.SITE_BASE_URL || 'http://localhost:3000',
+    baseURL:
+      provider === 'cloudflare_pages'
+        ? env.CF_PAGES_URL
+        : env.SITE_BASE_URL || 'http://localhost:3000',
     title: 'My Beautiful Website',
   },
   srcDir: 'server',
