@@ -18,7 +18,6 @@ pages_build_output_dir = ".output"
 
 [build]
 watch_dir = "nitro-ssr-liquid/*"
-command = "pnpm run build"
 cwd = "nitro-ssr-liquid"
 
 # Automatically place your workloads in an optimal location to minimize latency.
