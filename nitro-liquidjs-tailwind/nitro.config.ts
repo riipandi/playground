@@ -1,8 +1,12 @@
 import { resolve } from 'pathe'
-import { isDevelopment, isProduction } from 'std-env'
+import { env, isDevelopment, isProduction } from 'std-env'
 
 /* https://nitro.unjs.io/config */
 export default defineNitroConfig({
+  appConfig: {
+    baseURL: env.SITE_BASE_URL || 'http://localhost:3000',
+    title: 'My Beautiful Website',
+  },
   srcDir: 'server',
   preset: 'node-server',
   minify: isProduction,
