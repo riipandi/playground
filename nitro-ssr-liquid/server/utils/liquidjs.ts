@@ -75,10 +75,8 @@ export async function renderTemplate(templatePath: string, context?: Record<stri
   const templateContent = await templateStorage.getItem<string>(`${templatePath}.liquid`)
 
   if (!templateContent) {
-    throw createError({
-      status: 404,
-      message: `Template not found: ${templatePath}`,
-    })
+    const message = `Page not found: ${templatePath}`
+    throw createError({ status: 404, message })
   }
 
   const liquidEngine = new Liquid(LIQUID_ENGINE_CONFIG)
