@@ -15,7 +15,7 @@
         "check": "biome check . --write",
         "format": "biome format . --write",
         "lint": "biome lint . --write",
-        "cleanup": "pnpm run --stream --color \"/cleanup:/\"",
+        "cleanup": "pnpm run --stream --parallel --color \"/cleanup:/\"",
         "cleanup:dev": "pnpm dlx rimraf .{output,data,nitro,wrangler} _{build,data,dist}",
         "cleanup:deps": "pnpm dlx rimraf pnpm-lock.yaml node_modules tests-results",
         "wrangler": "wrangler"
