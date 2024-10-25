@@ -80,6 +80,7 @@ mode = "smart"
 # Docs: https://developers.cloudflare.com/pages/functions/wrangler-configuration#environment-specific-overrides
 
 ######## SHARED environment config ########
+
 # [vars]
 # NODE_VERSION = "20.18.0"
 
