@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "start": "wrangler pages dev --port 3000",
-        "build": "pnpm build:css && pnpm build:nitro",
+        "build": "pnpm --silent build:css && pnpm --silent build:nitro",
         "dev": "pnpm run --reporter-hide-prefix --color --parallel \"/watch:(css|nitro)/\"",
         "build:css": "tailwindcss -i ./server/assets/styles/styles.css -o ./public/css/styles.css --minify",
         "watch:css": "tailwindcss -i ./server/assets/styles/styles.css -o ./public/css/styles.css --watch",
