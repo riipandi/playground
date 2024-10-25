@@ -52,6 +52,7 @@ export default defineNitroErrorHandler((error, event) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${error.statusCode} - ${appConfig.title}</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body class="bg-gradient-to-br from-white to-gray-100 min-h-screen flex items-center justify-center p-4">
