@@ -59,7 +59,7 @@ export default defineCachedEventHandler(
     }
   },
   {
-    shouldBypassCache: (e) => handleNoCache(e),
+    shouldBypassCache: (e) => handleBypassCache(e),
     maxAge: 60 * 60 * 12 * 7 /* 7 days */,
   }
 )
