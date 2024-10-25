@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "start": "wrangler pages dev --port 3000",
-        "build": "pnpm run --stream --color \"/build:(css|nitro)/\"",
+        "build": "pnpm run --stream --parallel --color \"/build:(css|nitro)/\"",
         "dev": "pnpm run --reporter-hide-prefix --color --parallel \"/watch:(css|nitro)/\"",
         "build:css": "tailwindcss -i ./server/assets/styles/styles.css -o ./public/css/styles.css --minify",
         "watch:css": "tailwindcss -i ./server/assets/styles/styles.css -o ./public/css/styles.css --watch",
