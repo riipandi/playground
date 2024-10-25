@@ -42,6 +42,7 @@ _data/
 .wrangler
 build/
 dist/
+public/css/*
 
 # Environment Variables
 .env.*
