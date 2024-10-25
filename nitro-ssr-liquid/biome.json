@@ -77,13 +77,14 @@
                     "options": {
                         "allow": [
                             "assert",
+                            "debug",
+                            "dir",
                             "error",
                             "info",
-                            "warn",
-                            "debug",
                             "time",
                             "timeEnd",
-                            "timeLog"
+                            "timeLog",
+                            "warn"
                         ]
                     }
                 },

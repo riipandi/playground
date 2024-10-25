@@ -25,7 +25,8 @@
         "html-minifier": "^4.0.0",
         "liquidjs": "^10.18.0",
         "nano-jsx": "^0.1.0",
-        "std-env": "^3.7.0"
+        "std-env": "^3.7.0",
+        "unifont": "^0.1.5"
     },
     "devDependencies": {
         "@biomejs/biome": "^1.9.4",

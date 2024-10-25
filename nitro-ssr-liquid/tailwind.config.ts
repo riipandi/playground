@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: [...fontFamily.sans],
+        sans: ['Inter', ...fontFamily.sans],
         mono: [...fontFamily.mono],
       },
       colors: {

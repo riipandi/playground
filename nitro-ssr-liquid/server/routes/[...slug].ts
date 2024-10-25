@@ -9,7 +9,6 @@ type Feature = {
 export default defineEventHandler(async (event) => {
   const appConfig = useAppConfig(event) as AppConfig
   const features = await $fetch<Feature[]>('/api/features')
-
   const data = event.context.slug === 'index' ? { features } : {}
 
   return renderCachedTemplate(event.context.templateKey, {
