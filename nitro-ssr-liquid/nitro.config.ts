@@ -10,6 +10,7 @@ export default defineNitroConfig({
         ? env.CF_PAGES_URL
         : env.SITE_BASE_URL || 'http://localhost:3000',
     title: 'Beautiful Website',
+    description: 'Build fast and modern web applications with Nitro, LiquidJS, and TailwindCSS',
   } as AppConfig,
   srcDir: 'server',
   preset: 'cloudflare-pages',

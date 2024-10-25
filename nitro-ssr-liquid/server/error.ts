@@ -1,3 +1,4 @@
+import { process } from 'std-env'
 import type { AppConfig } from '~/types/config'
 
 export default defineNitroErrorHandler((error, event) => {
@@ -31,7 +32,10 @@ export default defineNitroErrorHandler((error, event) => {
       event,
       JSON.stringify({
         statusCode: error.statusCode || 500,
-        message: error.message || 'Internal Server Error',
+        message:
+          error.statusCode === 404
+            ? 'Resource not found'
+            : error.message || 'Internal Server Error',
         ...(process.dev && {
           issues: error.stack
             ?.split('\n')

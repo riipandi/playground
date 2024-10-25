@@ -5,6 +5,7 @@ export default defineRenderHandler((event) => {
 
   const htmlBody = renderCachedTemplate(event.context.templateKey, {
     pageTitle: `Welcome to ${appConfig.title}!`,
+    pageDescription: appConfig.description,
   })
 
   //   const htmlBody = /* html */ `<!DOCTYPE html>
