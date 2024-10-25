@@ -1,14 +1,15 @@
 export default eventHandler(() => {
   return [
     {
-      name: 'Nitro Engine',
-      description: 'Universal JavaScript/TypeScript server runtime with powerful DX',
-      highlight: 'Lightning Fast',
+      name: 'Nitro by UnJS',
+      description:
+        'Create web servers with everything you need and deploy them wherever you prefer',
+      highlight: 'Next Generation Server Toolkit',
     },
     {
       name: 'LiquidJS Templates',
-      description: 'Safe, fast and ExpressJS-like template engine for Node.js',
-      highlight: 'Dynamic & Flexible',
+      description: 'A simple, expressive and safe template engine.',
+      highlight: 'Easy & Safe Rendering',
     },
     {
       name: 'TailwindCSS',
