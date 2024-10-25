@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "start": "wrangler pages dev --port 3000",
-        "build": "pnpm run --stream --parallel --color \"/build:(css|nitro)/\"",
+        "build": "pnpm build:css && pnpm build:nitro",
         "dev": "pnpm run --reporter-hide-prefix --color --parallel \"/watch:(css|nitro)/\"",
         "build:css": "tailwindcss -i ./server/assets/styles/styles.css -o ./public/css/styles.css --minify",
         "watch:css": "tailwindcss -i ./server/assets/styles/styles.css -o ./public/css/styles.css --watch",
@@ -15,9 +15,10 @@
         "format": "biome format . --write",
         "lint": "biome lint . --write",
         "prepare": "nitro prepare",
-        "cleanup": "pnpm run --stream --parallel --color \"/cleanup:/\"",
+        "cleanup": "pnpm run --stream --parallel --color \"/cleanup:(?!deps)/\"",
         "cleanup:dev": "pnpm dlx rimraf .{output,data,nitro,wrangler} _{build,data,dist}",
-        "cleanup:deps": "pnpm dlx rimraf pnpm-lock.yaml node_modules tests-results",
+        "cleanup:deps": "pnpm dlx rimraf pnpm-lock.yaml node_modules",
+        "cleanup:articacts": "pnpm dlx rimraf public/css tests-results",
         "wrangler": "wrangler"
     },
     "dependencies": {
