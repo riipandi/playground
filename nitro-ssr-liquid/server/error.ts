@@ -72,7 +72,7 @@ export default defineNitroErrorHandler((error, event) => {
           process.dev
             ? `
         <div class="space-y-6">
-          <div class="bg-red-50 rounded-lg p-6 overflow-auto max-h-[320px] text-left border border-red-200">
+          <div class="bg-red-50 rounded-lg p-6 overflow-auto max-h-max text-left border border-red-200">
             <div class="font-mono text-sm leading-relaxed">
               <div class="mb-2">
                 <span class="font-semibold text-red-800">Error Type:</span>
