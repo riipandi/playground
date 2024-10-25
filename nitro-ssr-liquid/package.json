@@ -22,6 +22,7 @@
     },
     "dependencies": {
         "liquidjs": "^10.18.0",
+        "nano-jsx": "^0.1.0",
         "std-env": "^3.7.0"
     },
     "devDependencies": {

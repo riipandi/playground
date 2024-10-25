@@ -25,6 +25,6 @@ export default defineNitroConfig({
     crawlLinks: true,
     failOnError: true,
     ignore: ['/404'],
-    routes: ['/', '/welcome'],
+    routes: ['/', '/welcome', '/ssr-jsx'],
   },
 })
