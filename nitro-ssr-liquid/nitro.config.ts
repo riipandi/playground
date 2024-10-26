@@ -20,4 +20,19 @@ export default defineNitroConfig({
     ignore: ['/404'],
     routes: ['/', '/welcome', '/ssr-jsx'],
   },
+  typescript: {
+    generateTsConfig: true,
+    tsConfig: {
+      compilerOptions: {
+        jsx: 'preserve',
+        jsxFactory: 'React.createElement',
+        jsxFragmentFactory: 'React.Fragment',
+        noEmit: true,
+        strict: false,
+        skipLibCheck: true,
+        verbatimModuleSyntax: true,
+        tsBuildInfoFile: '../../node_modules/.tsbuildinfo',
+      },
+    },
+  },
 })
