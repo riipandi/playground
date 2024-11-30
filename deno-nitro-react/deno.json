@@ -1,0 +1,26 @@
+{
+  "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
+  "tasks": {
+    "dev:server": "deno run -A --node-modules-dir npm:nitropack dev",
+    "build:server": "deno run -A --node-modules-dir npm:nitropack build",
+    "prepare:server": "deno run -A --node-modules-dir npm:nitropack prepare",
+    "start:server": "deno task --config .output/deno.json start",
+    "dev:client": "deno run -A --node-modules-dir npm:vite",
+    "build:client": "deno run -A --node-modules-dir npm:vite build",
+    "preview:client": "deno run -A --node-modules-dir npm:vite preview",
+    "serve:client": "deno run --allow-net --allow-read https://deno.land/std@0.157.0/http/file_server.ts .output/client/"
+  },
+  "imports": {
+    "@vitejs/plugin-react": "npm:@vitejs/plugin-react@^4.3.4",
+    "pathe": "npm:pathe@^1.1.2",
+    "react-dom": "npm:react-dom@^18.3.1",
+    "react": "npm:react@^18.3.1",
+    "std-env": "npm:std-env@^3.8.0",
+    "vite": "npm:vite@^6.0.1"
+  },
+  "nodeModulesDir": "auto",
+  "compilerOptions": {
+    "strict": false,
+    "jsx": "react-jsx"
+  }
+}
