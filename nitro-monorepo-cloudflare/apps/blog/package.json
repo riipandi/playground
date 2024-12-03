@@ -1,0 +1,28 @@
+{
+    "name": "blog",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "nitro build",
+        "dev": "nitro dev --port 3001",
+        "start": "wrangler pages dev",
+        "prepare": "nitro prepare",
+        "lint": "biome lint . --write",
+        "check": "biome check . --write",
+        "format": "biome format . --write",
+        "typecheck": "tsc -b --noEmit",
+        "wrangler": "wrangler"
+    },
+    "dependencies": {
+        "consola": "catalog:",
+        "pathe": "catalog:",
+        "std-env": "catalog:"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "catalog:",
+        "nitropack": "catalog:",
+        "typescript": "catalog:",
+        "wrangler": "catalog:"
+    }
+}
